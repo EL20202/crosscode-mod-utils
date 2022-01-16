@@ -3,5 +3,7 @@
     "version": "0.0.1",
 
     "title": "Mod Utilities",
-    "description": "Adds various utilities helpful for modders."
+    "description": "Adds various utilities helpful for modders.",
+
+    "prestart": "prestart.js"
 }
