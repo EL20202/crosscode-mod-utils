@@ -37,5 +37,3 @@ sc.modUtils = {
         return true;
     }
 }
-
-ig.vars.registerVarAccessor("mod", sc.modUtils);
