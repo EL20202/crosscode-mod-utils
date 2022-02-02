@@ -25,7 +25,13 @@ sc.modUtils = {
             return false;
         }
 
-        sc.MENU_SUBMENU[menuName] = menuName;
+        let number;
+
+        do {
+            number = Math.floor(Math.random() * 0xffffffff);
+        // a conflict is basically *guaranteed* to not occur... but it's better safe than sorry. :)
+        } while(number in sc.SUB_MENU_INFO)
+        sc.MENU_SUBMENU[menuName] = number;
 
         sc.SUB_MENU_INFO[sc.MENU_SUBMENU[menuName]] = {
             Clazz: menuClass,

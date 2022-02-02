@@ -1,6 +1,6 @@
 {
     "id": "mod-utils",
-    "version": "0.0.1",
+    "version": "0.1.0",
 
     "title": "Mod Utilities",
     "description": "Adds various utilities helpful for modders.",
