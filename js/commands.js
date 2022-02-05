@@ -14,4 +14,18 @@ window.cmd = {
     },
     addCredits: (amount) => sc.model.player.addCredit(amount),
     teleport: (mapName, destination) => ig.game.teleport(mapName, destination),
+    reloadPlayerConfigs() {
+        sc.PARTY_OPTIONS.forEach(configName => {
+            $.ajax({
+                datatype: "json",
+                url: configName.toLowerCase().toPath(ig.root + "data/players/", ".json"),
+                success: configData => {
+                    sc.party.models[configName].config.onload(configData);
+                },
+                error: () => {
+                    console.warn(`Error loading config for ${configName}!`)
+                }
+            })
+        })
+    }
 }
